@@ -1,0 +1,29 @@
+<script>
+  import { todoItems, addTodoItem } from "./todo.js";
+</script>
+
+<div @name="todo-list">
+  <p :for="item in items">
+    <span>{ item.title }</span>
+    <spna>{ item.isDone ? '完了' : '進行中' }</spna>
+  </p>
+  <script>
+    constructor(){
+      this.items = todoItems
+      console.debug('constractor todo-list')
+    }
+  </script>
+</div>
+
+<div @name="input-todo">
+  <input type="text" name="title" ref="inputTodo" />
+  <button @click="onClickInputTodo">Add Todo</button>
+  <script>
+    constructor(){
+      console.debug('constractor input-todo')
+    }
+    onClickInputTodo() {
+      addTodoItem(this.$refs.inputTodo.value);
+    }
+  </script>
+</div>

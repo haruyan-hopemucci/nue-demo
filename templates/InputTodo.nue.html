@@ -1,0 +1,16 @@
+<script>
+  import { todoItems, addTodoItem } from "./todo.js";
+</script>
+
+<div @name="InputTodo">
+  <input type="text" name="title" ref="inputTodo" />
+  <button @click="onClickInputTodo">Add Todo</button>
+  <script>
+    constructor(){
+      console.debug('constractor InputTodo')
+    }
+    onClickInputTodo() {
+      addTodoItem(this.$refs.inputTodo.value);
+    }
+  </script>
+</div>

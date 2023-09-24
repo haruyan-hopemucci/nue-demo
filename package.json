@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "nuejs-core": "^0.1.1"
+  }
+}

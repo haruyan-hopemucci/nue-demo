@@ -1,0 +1,19 @@
+<section @name="image-gallery" class="gallery">
+  <div>
+    <a class="seek prev" @click="index--" :if="index">Seek prev</a>
+    <img ref="image" src="{ basedir }/{ images[index] }">
+    <a class="seek next" @click="index++"
+      :if="images.length - index > 1">Seek next</a>
+  </div>
+  <nav>
+    <a :for="src, i in images"
+      class="{ current: i == index }"
+      @click="index = i">●</a>
+  </nav>
+  <script>
+    index = 1
+    updated() {
+      console.debug(this.$el)
+    }
+  </script>
+</section>

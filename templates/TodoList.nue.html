@@ -1,0 +1,16 @@
+<script>
+  import { todoItems, addTodoItem } from "./todo.js";
+</script>
+
+<div @name="TodoList">
+  <p :for="item in items">
+    <span>{ item.title }</span>
+    <spna>{ item.isDone ? '完了' : '進行中' }</spna>
+  </p>
+  <script>
+    constructor(){
+      this.items = todoItems
+      console.debug(this.items)
+    }
+  </script>
+</div>
